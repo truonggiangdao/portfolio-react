@@ -1,0 +1,107 @@
+.loading-frame {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.loading-frame .loading {
+  animation: ani-avatar-fadein infinite 3s linear;
+  height: 40vmin;
+  width: 40vmin;
+  pointer-events: none;
+  border-radius: 50%;
+  position: relative;
+}
+
+.loading-frame .loading .loading-border {
+  animation: ani-avatar-spin infinite 3s linear;
+  position: absolute;
+  width: 38vmin;
+  height: 38vmin;
+  border: 1vmin solid white;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.loading-frame .loading .loading-avatar {
+  animation: ani-avatar-scale infinite 2s linear;
+  position: absolute;
+  height: 36vmin;
+  width: 36vmin;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  top: 2vmin;
+  left: 2vmin;
+  z-index: 2;
+}
+
+@keyframes ani-avatar-scale {
+  0% {
+    height: 36vmin;
+    width: 36vmin;
+    top: 2vmin;
+    left: 2vmin;
+  }
+  25% {
+    height: 34vmin;
+    width: 34vmin;
+    top: 3vmin;
+    left: 3vmin;
+  }
+  50% {
+    height: 32vmin;
+    width: 32vmin;
+    top: 4vmin;
+    left: 4vmin;
+  }
+  75% {
+    height: 34vmin;
+    width: 34vmin;
+    top: 3vmin;
+    left: 3vmin;
+  }
+  100% {
+    height: 36vmin;
+    width: 36vmin;
+    top: 2vmin;
+    left: 2vmin;
+  }
+}
+
+@keyframes ani-avatar-fadein {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes ani-avatar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
